@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxanium', cursive;
+}
+
+body{
+    text-align: center; /*vai centralizar a minha pokedex*/
+    background: linear-gradient(to bottom, #6ab7f5, #fff); /*vai colocar a cor de fundo*/
+    min-height: 100vh; /*expande todo o fundo para a tela toda*/
+}
+
+main {
+    display: inline-block; /*coloca o fundo vermelho somente atras da imagem*/
+    margin-top: 2%; /*vai separar um pouco do inicio da tela*/
+    padding: 15px; /*não vai ficar colado na tela*/
+    position: relative;/* vai ser incluso dentro da minha pokedex, ou seja, vai respeitar as delimitações dela*/
+}
+
+.pokedex{
+    width: 100%;/* vai fazer a pokedex(imagem) diminuir conforme for necessario, exemplo para celular*/
+    max-width: 425; /*vai fazer com que a imagem não aumente ou diminua conforme algo que eu colocar em cima ou em baixo da img*/   
+}
+
+.pokemon_image{
+    position: absolute;
+    bottom: 55%; /*vai respeitar o tamanho da minha pokedex e vai estar na posição 55%*/
+    left: 50%; /*porcentagem vai respeitar o tamanho da tela sempre*/
+    transform: translate(-63%, 20%);
+    height: 18%;
+}
+
+.pokemon_data{
+    position: absolute;
+    font-weight: 600;
+    color: #aaa;
+    top: 51%;
+    right: 18%;
+    font-size: clamp(8px, 5vw, 25px); /*(min, desejavel, max); a função clamp recebe esses 3 parametros, para quando diminuir a tel, não diminuir a escritura"charizard"*/
+}
+
+.pokemon_name{
+    color: #3a444d;
+    font-size: x-large;
+    margin-right: 20px; /*vai arrastar um pouco para a esquerda (charizard)
+    text-transform: capitalize; /*vai colocar somente a primeira letra maiuscula*/
+}
+
+.form{
+    position: absolute;
+    width: 65%;
+    top: 65%;
+    left: 14.5%;
+}
+.input_search{
+    width: 170px;
+    padding: 4%;
+    outline: none; /*quando eu clicar no name or number, ele não vai trazer a cor azul padrão*/
+    border: 2px solid #333; /*declara a borda na cor preta*/
+    border-radius: 5px; /*para ficar com as bordas um pouco mais arredondadas*/
+    font-weight: 600;/*para ficar um pouco mais em negrito*/
+    font-size: clamp(8px, 5vw, 1rem);
+    box-shadow: -1px 2px 0 #888, -3px 5px 0 #333; /*vai imitar onde o pokemon fica*/
+}
+.buttons{
+    position: absolute;
+    bottom: 10%;
+    left: 52%;
+    width: 60%;
+    transform: translate(-57%, 0);
+    display: flex;/* faz com que os botoes fiquem um do lado do outro*/
+    gap: 20px;/* faz com que os botoes tenham um minimo de espaçamento*/
+}
+.button{
+    width: 80%;
+    padding: 4%;
+    border: 2px solid black;
+    border-radius:5px;
+    font-size: clamp(8px, 5vw, 1rem);
+    font-weight: 600;
+    color:white;
+    background-color: #444;
+    box-shadow: -2px 3px 0 #222,  -4px 6px 0 #000;
+}
+.button:active{
+    box-shadow:inset -4px 4px 0 #222; /*da a impressão que o botão entrou dentro de um buraco*/
+    font-size: 0.9rem;
+}
