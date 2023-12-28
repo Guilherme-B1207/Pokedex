@@ -34,18 +34,25 @@ main {
 }
 
 .pokemon_data{
+
+    text-align: center;
     position: absolute;
     font-weight: 600;
     color: #aaa;
     top: 51%;
     right: 18%;
-    font-size: clamp(8px, 5vw, 25px); /*(min, desejavel, max); a função clamp recebe esses 3 parametros, para quando diminuir a tel, não diminuir a escritura"charizard"*/
+    font-size: clamp(4px, 2.5vw, 15px); /*(min, desejavel, max); a função clamp recebe esses 3 parametros, para quando diminuir a tel, não diminuir a escritura"charizard"*/
 }
 
 .pokemon_name{
     color: #3a444d;
     font-size: x-large;
-    margin-right: 20px; /*vai arrastar um pouco para a esquerda (charizard)
+    margin-right: 20px; /*vai arrastar um pouco para a esquerda (charizard)*/
+    text-transform: capitalize; /*vai colocar somente a primeira letra maiuscula*/
+}
+.pokemon_number{
+    color: #727475;
+    font-size: x-large;
     text-transform: capitalize; /*vai colocar somente a primeira letra maiuscula*/
 }
 

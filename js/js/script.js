@@ -17,18 +17,20 @@ const fetchPokemon = async (pokemon) => { //arrow function tem a função de dei
 }
 
 const renderPokemon = async (pokemon) => {
-   
+
     pokemonName.innerHTML = 'loading';
     pokemonNumber.innerHTML = '';
     const data = await fetchPokemon(pokemon);
 
+    console.log(data)
     if(data){
     pokemonImage.style.display = 'block';
     pokemonName.innerHTML = data.name; //define ou pega a sintaxe HTML ou XML descrevendo os elementos descendentes
     pokemonNumber.innerHTML = data.id;
     pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
-    pokemonNumber = data.id;
-    } else{
+    searchPokemon = data.id;
+
+    } else {
         pokemonImage.style.display = 'none';
         pokemonName.innerHTML = 'not found :(';
         pokemonNumber.innerHTML = 'not found :(';
@@ -45,12 +47,15 @@ ButtonPrev.addEventListener('click', () =>{
     if(searchPokemon > 1) {
         searchPokemon -=1;
         renderPokemon(searchPokemon);
+        console.log(searchPokemon)
     }
  });
 
 ButtonNext.addEventListener('click', () =>{
     searchPokemon +=1;
     renderPokemon(searchPokemon);
+    console.log(searchPokemon)
+
  });
 
 renderPokemon(searchPokemon);
